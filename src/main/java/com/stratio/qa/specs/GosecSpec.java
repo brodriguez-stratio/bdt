@@ -1200,13 +1200,11 @@ public class GosecSpec extends BaseGSpec {
                         putObject.remove(uidOrGidTenant);
                         // create new array with values without resourceId
                         for (int i = 0; i < jsonGroups.size(); i++) {
-                            int j = 0;
                             String jsonIds = jsonGroups.get(i).toString().substring(1, jsonGroups.get(i).toString().length() - 1);
                             if (jsonIds.equals(resourceId)) {
                                 commonspec.getLogger().warn("{} {} removed from tenant {}", resource, resourceId, tenantId);
                             } else {
                                 stringGroups.add(jsonIds);
-                                j = j + 1;
                             }
                         }
                         putObject.put(uidOrGidTenant, new JSONArray(stringGroups));
